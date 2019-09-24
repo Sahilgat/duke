@@ -20,6 +20,9 @@ public class StorageParser {
      */
     public Task parseLine(String line) throws ParseFileException {
         String[] splited = line.split("//");
+        int length = splited.length;
+        //Preliminary check to ensure state file was not corrupted by checking line size (not exhaustive)
+        assert (length == 3 || length == 4);
         if (splited[0].equals("T")) {
             ToDo currTask = new ToDo(splited[1], Boolean.parseBoolean(splited[2]));
             return currTask;

@@ -63,7 +63,7 @@ public class Duke {
         try {
             Command c = Parser.parse(input);
             String response = c.execute(tasks, ui, storage);
-            if(response.equals(Ui.EXIT_MESSAGE)) {
+            if (response.equals(Ui.EXIT_MESSAGE)) {
                 Main.STAGE.close();
                 return Ui.EXIT_MESSAGE;
             } else {
